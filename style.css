@@ -1,0 +1,1513 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 深色背景系统 */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a25;
+    --bg-card-hover: #222230;
+    
+    /* 霓虹色系 */
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+    --neon-blue: #3b82f6;
+    --neon-cyan: #06b6d4;
+    --neon-orange: #f97316;
+    
+    /* 渐变效果 */
+    --gradient-neon: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+    --gradient-neon-reverse: linear-gradient(135deg, #3b82f6 0%, #ec4899 50%, #a855f7 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 153, 0.4));
+    --gradient-card: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));
+    
+    /* 文字颜色 */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    
+    /* 发光效果 */
+    --glow-purple: 0 0 20px rgba(168, 85, 247, 0.5);
+    --glow-pink: 0 0 20px rgba(236, 72, 153, 0.5);
+    --glow-blue: 0 0 20px rgba(59, 130, 246, 0.5);
+    --glow-neon: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(236, 72, 153, 0.2);
+    
+    /* 动画时间 */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+    
+    /* 兼容旧变量 */
+    --primary-color: var(--neon-purple);
+    --primary-purple: var(--neon-purple);
+    --primary-pink: var(--neon-pink);
+    --dark-bg: var(--bg-primary);
+    --card-bg: var(--bg-card);
+    --text-light: var(--text-primary);
+    --text-gray: var(--text-secondary);
+    --gradient-music: var(--gradient-neon);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    overflow-x: hidden;
+}
+
+/* 霓虹发光工具类 */
+.neon-text {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.neon-border {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                var(--gradient-neon) border-box;
+}
+
+.neon-glow {
+    box-shadow: var(--glow-neon);
+}
+
+.neon-glow-hover:hover {
+    box-shadow: var(--glow-neon);
+}
+
+/* 霓虹按钮样式 */
+.neon-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--gradient-neon);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all var(--transition-normal) ease;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.neon-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.5), var(--glow-neon);
+}
+
+/* 导航栏 - 毛玻璃霓虹风格 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all var(--transition-normal) ease;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 4px 30px rgba(168, 85, 247, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
+}
+
+.logo::before {
+    content: '♪';
+    margin-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all var(--transition-normal) ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-neon);
+    transition: width var(--transition-normal) ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--neon-purple);
+}
+
+/* 汉堡菜单按钮 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--gradient-neon);
+    border-radius: 2px;
+    transition: all var(--transition-normal) ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* 流行音乐主题首页 - 全新霓虹风格 */
+.hero-music {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-primary);
+    padding: 0;
+}
+
+/* Canvas波形动画容器 */
+.wave-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#waveCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 渐变叠加层 */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, var(--bg-primary) 70%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.music-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.music-note {
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(168, 85, 247, 0.1);
+    animation: floatNote 20s infinite ease-in-out;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.note-1 { top: 10%; left: 15%; animation-delay: 0s; font-size: 4rem; color: rgba(168, 85, 247, 0.15); }
+.note-2 { top: 20%; right: 20%; animation-delay: 3s; font-size: 3.5rem; color: rgba(236, 72, 153, 0.15); }
+.note-3 { top: 60%; left: 10%; animation-delay: 6s; font-size: 3rem; color: rgba(59, 130, 246, 0.15); }
+.note-4 { top: 70%; right: 15%; animation-delay: 9s; font-size: 4.5rem; color: rgba(168, 85, 247, 0.15); }
+.note-5 { top: 40%; left: 25%; animation-delay: 12s; font-size: 3.2rem; color: rgba(236, 72, 153, 0.15); }
+.note-6 { top: 50%; right: 30%; animation-delay: 15s; font-size: 3.8rem; color: rgba(59, 130, 246, 0.15); }
+
+@keyframes floatNote {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translateY(-40px) rotate(10deg) scale(1.1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-20px) rotate(-5deg) scale(1.05);
+        opacity: 0.15;
+    }
+    75% {
+        transform: translateY(-50px) rotate(15deg) scale(1.15);
+        opacity: 0.25;
+    }
+}
+
+.hero-music-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    padding: 8rem 2rem 4rem;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-two-column {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 4rem;
+    width: 100%;
+    align-items: center;
+}
+
+.profile-card {
+    background: rgba(26, 26, 37, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 30px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), var(--glow-neon);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(168, 85, 247, 0.1), transparent 30%);
+    animation: rotateGlow 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateGlow {
+    100% { transform: rotate(360deg); }
+}
+
+.music-intro-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.name-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8)); }
+}
+
+.school-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.1));
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.badge-text {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.major-text {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.profile-quote {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.08));
+    border-left: 4px solid;
+    border-image: var(--gradient-neon) 1;
+    padding: 1.5rem;
+    border-radius: 0 15px 15px 0;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.profile-quote p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 15px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all var(--transition-normal) ease;
+}
+
+.stat-item:hover {
+    background: rgba(168, 85, 247, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+    border-color: var(--neon-purple);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.name-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #d95f37 0%, #e67d58 50%, #f08a6a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.school-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(217, 95, 55, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(217, 95, 55, 0.4);
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+}
+
+.badge-text {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.intro-section {
+    background: rgba(26, 26, 37, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal) ease;
+}
+
+.intro-section:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+.intro-heading {
+    color: var(--neon-purple);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.intro-heading::before {
+    content: "♪";
+    position: absolute;
+    left: 0;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.4rem;
+}
+
+.intro-description {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* 旧样式保留用于兼容 */
+.hero {
+    display: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center bottom, transparent 0%, var(--bg-primary) 70%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 滚动指示器 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    text-align: center;
+    animation: fadeInUp 1s ease 1s both;
+}
+
+.scroll-indicator span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.scroll-arrow {
+    color: var(--neon-purple);
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--gradient-music);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(217, 95, 55, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(217, 95, 55, 0.5);
+}
+
+/* 通用容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 通用section */
+section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 3.5rem;
+    font-weight: 400;
+}
+
+/* 专业技能卡片 - 霓虹风格 */
+.services {
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-purple), var(--neon-pink), transparent);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all var(--transition-normal) ease;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-card);
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+    z-index: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-purple);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), var(--glow-neon);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow) ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 15, 0.85), rgba(168, 85, 247, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.service-card:hover .service-overlay {
+    opacity: 1;
+}
+
+.service-icon {
+    font-size: 4rem;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+}
+
+.service-content {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.service-content h3 {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.service-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* 技能进度条 */
+.skill-bar {
+    margin-top: 1rem;
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient-neon);
+    border-radius: 10px;
+    transition: width 1s ease;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* 音乐风格标签 */
+.music-styles {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.styles-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.style-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.style-tag {
+    padding: 0.8rem 1.8rem;
+    background: transparent;
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all var(--transition-normal) ease;
+    cursor: default;
+}
+
+.style-tag:hover {
+    background: var(--gradient-neon);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+}
+
+/* 成长历程 - 现代时间线霓虹风格 */
+.journey {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    position: relative;
+}
+
+.journey::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-purple), var(--neon-pink), transparent);
+}
+
+.timeline-modern {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-modern::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--neon-purple), var(--neon-pink), var(--neon-blue));
+    transform: translateX(-50%);
+    opacity: 0.3;
+}
+
+.timeline-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background: var(--gradient-neon);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--glow-purple);
+    z-index: 2;
+}
+
+.timeline-block.reverse {
+    direction: rtl;
+}
+
+.timeline-block.reverse .timeline-text {
+    direction: ltr;
+}
+
+.timeline-img {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: all var(--transition-normal) ease;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.timeline-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--glow-neon);
+    border-color: var(--neon-purple);
+}
+
+.timeline-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.timeline-text {
+    padding: 2rem;
+}
+
+.timeline-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--gradient-neon);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.3);
+}
+
+.timeline-text h3 {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.timeline-text p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* 关于我 */
+/* 作品展示 - 霓虹画廊风格 */
+.showcase {
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-pink), var(--neon-purple), transparent);
+}
+
+.showcase-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+.category-desc {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    aspect-ratio: 1;
+    background: var(--bg-card);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    transition: all var(--transition-normal) ease;
+}
+
+.photo-item:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), var(--glow-neon);
+    transform: translateY(-5px);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow) ease;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 15, 0.9), rgba(168, 85, 247, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.photo-overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+/* 视频作品 - 霓虹风格 */
+.videos {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+}
+
+.videos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-cyan), transparent);
+}
+
+.video-category {
+    margin-bottom: 4rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-grid-single {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all var(--transition-normal) ease;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    max-height: 500px;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-purple);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), var(--glow-neon);
+}
+
+.video-item video {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    background: var(--bg-secondary);
+}
+
+.video-caption {
+    padding: 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.05));
+}
+
+/* 联系方式 - 霓虹风格 */
+.contact {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-blue), transparent);
+}
+
+.contact-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    background: var(--bg-card);
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    transition: all var(--transition-normal) ease;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-card);
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-purple);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), var(--glow-neon);
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-neon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.contact-card .contact-icon {
+    font-size: 2.2rem;
+}
+
+.contact-card h3 {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 页脚 - 霓虹风格 */
+.footer {
+    background: var(--bg-secondary);
+    text-align: center;
+    padding: 2.5rem 0;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.footer-quote {
+    margin-top: 1rem;
+    font-style: italic;
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1rem;
+}
+
+/* 灯箱 - 霓虹风格 */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.98);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 2px solid rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.3);
+    animation: lightboxFadeIn 0.3s ease;
+}
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 3rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-normal) ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.lightbox .close:hover {
+    color: var(--neon-purple);
+    background: rgba(168, 85, 247, 0.2);
+    box-shadow: var(--glow-purple);
+}
+
+.lightbox-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.lightbox-nav button {
+    background: rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all var(--transition-normal) ease;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-nav button:hover {
+    background: var(--gradient-neon);
+    border-color: transparent;
+    transform: scale(1.1);
+    box-shadow: var(--glow-neon);
+}
+
+/* 平板设备响应式 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .photo-grid,
+    .video-grid,
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .hero-two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .timeline-modern::before {
+        display: none;
+    }
+    
+    .timeline-block::before {
+        display: none;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 15, 0.98);
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .photo-grid,
+    .video-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .timeline-block,
+    .timeline-block.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+    
+    .timeline-modern::before {
+        display: none;
+    }
+    
+    .timeline-block::before {
+        display: none;
+    }
+    
+    .timeline-img img {
+        height: 250px;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-music {
+        min-height: auto;
+        padding: 100px 20px 60px;
+    }
+
+    .hero-two-column {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-card {
+        padding: 2rem;
+    }
+
+    .name-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .intro-section {
+        padding: 1.5rem;
+    }
+
+    .profile-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+    }
+    
+    .style-tags {
+        gap: 0.8rem;
+    }
+    
+    .style-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-music {
+        padding: 80px 15px 40px;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .intro-section {
+        padding: 1.2rem;
+    }
+
+    .profile-stats {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .name-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+    
+    .lightbox .close {
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-nav button {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .category-title {
+        font-size: 1.4rem;
+    }
+    
+    .timeline-text h3 {
+        font-size: 1.3rem;
+    }
+}

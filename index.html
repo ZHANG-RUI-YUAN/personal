@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍 - 流行演唱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">我的音乐之旅</div>
+            <button class="hamburger" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#services" class="nav-link">专业技能</a></li>
+                <li><a href="#journey" class="nav-link">成长历程</a></li>
+                <li><a href="#showcase" class="nav-link">作品展示</a></li>
+                <li><a href="#contact" class="nav-link">联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首页 - 流行音乐主题 -->
+    <section id="home" class="hero-music">
+        <!-- Canvas波形动画背景 -->
+        <div class="wave-canvas-container">
+            <canvas id="waveCanvas"></canvas>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="music-background">
+            <div class="music-note note-1">♪</div>
+            <div class="music-note note-2">♫</div>
+            <div class="music-note note-3">♪</div>
+            <div class="music-note note-4">♫</div>
+            <div class="music-note note-5">♪</div>
+            <div class="music-note note-6">♫</div>
+        </div>
+        <div class="hero-music-content">
+            <div class="hero-two-column">
+                <!-- 左侧：个人信息卡片 -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <h1 class="name-title">我的音乐之旅</h1>
+                        <div class="school-badge">
+                            <span class="badge-icon">🎓</span>
+                            <span class="badge-text">中国传媒大学</span>
+                        </div>
+                        <p class="major-text">流行演唱专业</p>
+                    </div>
+                    
+                    <div class="profile-quote">
+                        <p>"用音乐传递情感<br>用歌声打动人心"</p>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🎤</span>
+                            <span class="stat-label">流行演唱</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">🎹</span>
+                            <span class="stat-label">钢琴演奏</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">💃</span>
+                            <span class="stat-label">舞台表演</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">⭐</span>
+                            <span class="stat-label">商业演出</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：音乐介绍 -->
+                <div class="music-intro-column">
+                    <div class="intro-section">
+                        <h3 class="intro-heading">关于流行音乐</h3>
+                        <p class="intro-description">
+                            流行音乐是当代最具影响力的音乐形式，它融合了多元文化元素，
+                            以旋律动听、节奏鲜明、情感真挚为特点。从爵士到摇滚，从民谣到电子，
+                            流行音乐不断创新，成为连接不同世代、跨越文化边界的艺术桥梁。
+                        </p>
+                    </div>
+                    
+                    <div class="intro-section">
+                        <h3 class="intro-heading">我的音乐理念</h3>
+                        <p class="intro-description">
+                            音乐不仅是声音的艺术，更是情感的表达。我致力于通过声音传递真实的情感，
+                            让每一首歌都能触动人心。从钢琴演奏到舞台表演，从技巧训练到情感演绎，
+                            我在不断探索音乐的无限可能。
+                        </p>
+                    </div>
+                    
+                    <div class="intro-section">
+                        <h3 class="intro-heading">艺术追求</h3>
+                        <p class="intro-description">
+                            在流行音乐的世界里，我相信每个音符都有温度，每个旋律都有故事。
+                            通过系统的专业训练和不断的舞台实践，我希望能够将更多优秀的作品带给听众，
+                            用音乐连接彼此的心灵。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 滚动指示器 -->
+        <div class="scroll-indicator">
+            <span>向下滚动</span>
+            <div class="scroll-arrow">▼</div>
+        </div>
+    </section>
+
+    <!-- 专业技能卡片 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">专业技能</h2>
+            <p class="section-subtitle">从舞台表演到音乐创作，全方位的艺术修养</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/少年音乐写真.jpg" alt="流行演唱">
+                        <div class="service-overlay">
+                            <span class="service-icon">🎤</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>流行演唱</h3>
+                        <p>中国传媒大学流行演唱专业在读，具备扎实的声乐技巧与舞台表演能力。擅长多种流行音乐风格的演绎，能够准确把握歌曲情感，用歌声打动听众。</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/钢琴演奏1.jpg" alt="钢琴演奏">
+                        <div class="service-overlay">
+                            <span class="service-icon">🎹</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>钢琴演奏</h3>
+                        <p>从童年开始接触钢琴，打下了扎实的音乐理论基础。具备良好的键盘演奏能力和乐理知识，为声乐学习提供了坚实的音乐素养支撑。</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/少年舞蹈写真.jpg" alt="舞蹈表演">
+                        <div class="service-overlay">
+                            <span class="service-icon">💃</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>舞蹈表演</h3>
+                        <p>经过系统的舞蹈训练，拥有优秀的肢体表现力和舞台感染力。能够通过舞蹈动作增强歌曲的视觉表现力，让舞台呈现更加完整和专业。</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/商演现场.jpg" alt="商业演出">
+                        <div class="service-overlay">
+                            <span class="service-icon">⭐</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>商业演出</h3>
+                        <p>参与多场商业演出和舞台活动，积累了丰富的实战经验。能够应对不同规模和类型的演出场合，以专业的态度和精彩的表现赢得观众认可。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 音乐风格标签 -->
+            <div class="music-styles">
+                <h3 class="styles-title">擅长音乐风格</h3>
+                <div class="style-tags">
+                    <span class="style-tag">Pop 流行</span>
+                    <span class="style-tag">R&B</span>
+                    <span class="style-tag">Soul 灵魂乐</span>
+                    <span class="style-tag">民谣</span>
+                    <span class="style-tag">抒情</span>
+                    <span class="style-tag">电子流行</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成长历程 -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <h2 class="section-title">成长历程</h2>
+            <p class="section-subtitle">从音乐启蒙到专业发展的精彩旅程</p>
+            
+            <div class="timeline-modern">
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <img src="images/少年舞蹈写真1.jpg" alt="音乐启蒙">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-badge">启蒙阶段</span>
+                        <h3>音乐启蒙 · 童年时光</h3>
+                        <p>从小就对音乐充满热爱，童年时期便开始接触钢琴，培养了良好的音乐基础。学习舞蹈来提升舞台表现力，每一个音符、每一个动作都是通往梦想的阶梯。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block reverse">
+                    <div class="timeline-img">
+                        <img src="images/钢琴演奏1.jpg" alt="系统学习">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-badge">成长阶段</span>
+                        <h3>系统学习 · 打好基础</h3>
+                        <p>在音乐学习的道路上不断探索，系统学习声乐技巧、钢琴演奏。这个阶段让我明白，成为一名优秀的流行歌手需要全方位的艺术修养和不懈的努力。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <img src="images/中国传媒大学开幕式.jpg" alt="考入传媒">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-badge">重要时刻</span>
+                        <h3>中国传媒大学 · 专业之路</h3>
+                        <p>凭借扎实的专业基础和不懈的努力，成功考入中国传媒大学流行演唱专业。这是梦想成真的时刻，也是新旅程的开始。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block reverse">
+                    <div class="timeline-img">
+                        <img src="images/中国传媒大学开幕式.jpg" alt="大学生活">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-badge">大学时期</span>
+                        <h3>大学生活 · 绽放舞台</h3>
+                        <p>在中国传媒大学的学习生活中，参与各种演出活动和开幕式表演，不断磨练技艺。每一次登台都是对自己的挑战和突破。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-img">
+                        <img src="images/商演现场1.jpg" alt="专业发展">
+                    </div>
+                    <div class="timeline-text">
+                        <span class="timeline-badge">专业发展</span>
+                        <h3>商业演出 · 实战舞台</h3>
+                        <p>参与各种商业演出和舞台表演，从国内到香港，用心感受音乐，用情演绎作品。继续在流行演唱的道路上精进，让更多人听到我的声音。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section id="showcase" class="showcase">
+        <div class="container">
+            <h2 class="section-title">作品展示</h2>
+            <p class="section-subtitle">记录每一个精彩瞬间</p>
+            
+            <!-- 少年时期 - 舞蹈 -->
+            <div class="showcase-category">
+                <h3 class="category-title">
+                    <span class="category-icon">💃</span>
+                    少年时期 · 舞蹈写真
+                </h3>
+                <p class="category-desc">从小开始系统学习舞蹈，培养优秀的肢体表现力和舞台感染力</p>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openLightbox('images/少年舞蹈写真.jpg')">
+                        <img src="images/少年舞蹈写真.jpg" alt="少年舞蹈写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/少年舞蹈写真1.jpg')">
+                        <img src="images/少年舞蹈写真1.jpg" alt="少年舞蹈写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/少年舞蹈写真2.jpg')">
+                        <img src="images/少年舞蹈写真2.jpg" alt="少年舞蹈写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/少年舞蹈写真3.jpg')">
+                        <img src="images/少年舞蹈写真3.jpg" alt="少年舞蹈写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 少年时期 - 音乐 -->
+            <div class="showcase-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎵</span>
+                    少年时期 · 音乐启蒙
+                </h3>
+                <p class="category-desc">童年时期开始接触钢琴和声乐，奠定扎实的音乐基础</p>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openLightbox('images/少年音乐写真.jpg')">
+                        <img src="images/少年音乐写真.jpg" alt="少年音乐写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/少年音乐写真1.jpg')">
+                        <img src="images/少年音乐写真1.jpg" alt="少年音乐写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/少年音乐写真2.jpg')">
+                        <img src="images/少年音乐写真2.jpg" alt="少年音乐写真">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/钢琴演奏1.jpg')">
+                        <img src="images/钢琴演奏1.jpg" alt="钢琴演奏">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大学时期 -->
+            <div class="showcase-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎓</span>
+                    大学时期 · 中国传媒大学
+                </h3>
+                <p class="category-desc">成功考入中国传媒大学流行演唱专业，参与各类演出活动和开幕式表演</p>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openLightbox('images/中国传媒大学开幕式.jpg')">
+                        <img src="images/中国传媒大学开幕式2.jpg" alt="高考专业成绩">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/中国传媒大学开幕式.jpg')">
+                        <img src="images/中国传媒大学开幕式.jpg" alt="中国传媒大学开幕式">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/中国传媒大学开幕式1.jpg')">
+                        <img src="images/中国传媒大学开幕式1.jpg" alt="中国传媒大学开幕式">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/大学舞蹈活动.jpg')">
+                        <img src="images/大学舞蹈活动.jpg" alt="大学舞蹈活动">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专业发展 -->
+            <div class="showcase-category">
+                <h3 class="category-title">
+                    <span class="category-icon">⭐</span>
+                    专业发展 · 商演实践
+                </h3>
+                <p class="category-desc">参与多场商业演出，积累丰富的舞台实战经验</p>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openLightbox('images/商演现场.jpg')">
+                        <img src="images/商演现场.jpg" alt="商演现场">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openLightbox('images/商演现场1.jpg')">
+                        <img src="images/商演现场1.jpg" alt="商演现场">
+                        <div class="photo-overlay">
+                            <span>查看大图</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频作品 -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">视频作品</h2>
+            <p class="section-subtitle">感受音乐的力量</p>
+            
+            <!-- 基础技能 -->
+            <div class="video-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎹</span>
+                    基础技能 · 钢琴与舞蹈
+                </h3>
+                <p class="category-desc">展示扎实的音乐基础和舞蹈功底，为流行演唱提供全面的艺术支撑</p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/钢琴演奏.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">钢琴演奏 - 展示音乐理论基础</p>
+                    </div>
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/舞蹈.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">舞蹈表演 - 展现肢体表现力</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专业演唱 -->
+            <div class="video-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🎤</span>
+                    专业演唱 · 舞台表演
+                </h3>
+                <p class="category-desc">流行演唱专业的舞台实践，展示多样化的演唱风格和舞台魅力</p>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/专业演唱.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">专业演唱 - 情感演绎</p>
+                    </div>
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/专业演唱1.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">专业演唱 - 技巧展示</p>
+                    </div>
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/专业演唱2.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">专业演唱 - 风格演绎</p>
+                    </div>
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/专业演唱3.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">专业演唱 - 现场表现</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商演视频 -->
+            <div class="video-category">
+                <h3 class="category-title">
+                    <span class="category-icon">⭐</span>
+                    商业演出 · 实战经验
+                </h3>
+                <p class="category-desc">参与真实商演活动，在实战中积累舞台经验，提升专业能力</p>
+                <div class="video-grid video-grid-single">
+                    <div class="video-item">
+                        <video controls poster="">
+                            <source src="videos/商演视频.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <p class="video-caption">商业演出 - 现场精彩瞬间</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <p class="section-subtitle">期待与您的合作</p>
+            <div class="contact-content">
+                <p class="contact-text">如有商业合作、演出邀请或其他咨询，欢迎通过以下方式联系我</p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-icon">📧</span>
+                        </div>
+                        <h3>电子邮箱</h3>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-icon">📱</span>
+                        </div>
+                        <h3>微信联系</h3>
+                        <p>YourWeChatID</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <span class="contact-icon">🎓</span>
+                        </div>
+                        <h3>院校</h3>
+                        <p>中国传媒大学</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 我的音乐之旅. All rights reserved.</p>
+            <p class="footer-quote">"音乐是生命的旋律，舞台是梦想的舞池"</p>
+        </div>
+    </footer>
+
+    <!-- 灯箱 -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-nav">
+            <button class="prev" onclick="changeImage(-1); event.stopPropagation();">&#10094;</button>
+            <button class="next" onclick="changeImage(1); event.stopPropagation();">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
