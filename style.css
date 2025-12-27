@@ -1,4 +1,4 @@
-/* 全局样式 */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,42 +6,42 @@
 }
 
 :root {
-    /* 深色背景系统 */
+    /* Dark Background System */
     --bg-primary: #0a0a0f;
     --bg-secondary: #12121a;
     --bg-card: #1a1a25;
     --bg-card-hover: #222230;
     
-    /* 霓虹色系 */
+    /* Neon Color Palette */
     --neon-purple: #a855f7;
     --neon-pink: #ec4899;
     --neon-blue: #3b82f6;
     --neon-cyan: #06b6d4;
     --neon-orange: #f97316;
     
-    /* 渐变效果 */
+    /* Gradient Effects */
     --gradient-neon: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
     --gradient-neon-reverse: linear-gradient(135deg, #3b82f6 0%, #ec4899 50%, #a855f7 100%);
     --gradient-glow: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 153, 0.4));
     --gradient-card: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));
     
-    /* 文字颜色 */
+    /* Text Colors */
     --text-primary: #ffffff;
     --text-secondary: #a1a1aa;
     --text-muted: #71717a;
     
-    /* 发光效果 */
+    /* Glow Effects */
     --glow-purple: 0 0 20px rgba(168, 85, 247, 0.5);
     --glow-pink: 0 0 20px rgba(236, 72, 153, 0.5);
     --glow-blue: 0 0 20px rgba(59, 130, 246, 0.5);
     --glow-neon: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(236, 72, 153, 0.2);
     
-    /* 动画时间 */
+    /* Animation Timing */
     --transition-fast: 0.2s;
     --transition-normal: 0.3s;
     --transition-slow: 0.5s;
     
-    /* 兼容旧变量 */
+    /* Legacy Variable Compatibility */
     --primary-color: var(--neon-purple);
     --primary-purple: var(--neon-purple);
     --primary-pink: var(--neon-pink);
@@ -64,7 +64,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 霓虹发光工具类 */
+/* Neon Glow Utility Classes */
 .neon-text {
     background: var(--gradient-neon);
     -webkit-background-clip: text;
@@ -86,7 +86,7 @@ body {
     box-shadow: var(--glow-neon);
 }
 
-/* 霓虹按钮样式 */
+/* Neon Button Styles */
 .neon-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -106,7 +106,7 @@ body {
     box-shadow: 0 15px 40px rgba(168, 85, 247, 0.5), var(--glow-neon);
 }
 
-/* 导航栏 - 毛玻璃霓虹风格 */
+/* Navigation Bar - Frosted Glass Neon Style */
 .navbar {
     position: fixed;
     top: 0;
@@ -193,7 +193,7 @@ body {
     color: var(--neon-purple);
 }
 
-/* 汉堡菜单按钮 */
+/* Hamburger Menu Button */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -232,7 +232,7 @@ body {
     }
 }
 
-/* 流行音乐主题首页 - 全新霓虹风格 */
+/* Pop Music Theme Homepage - New Neon Style */
 .hero-music {
     min-height: 100vh;
     position: relative;
@@ -244,7 +244,7 @@ body {
     padding: 0;
 }
 
-/* Canvas波形动画容器 */
+/* Canvas Waveform Animation Container */
 .wave-canvas-container {
     position: absolute;
     top: 0;
@@ -260,7 +260,7 @@ body {
     display: block;
 }
 
-/* 渐变叠加层 */
+/* Gradient Overlay */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -549,7 +549,7 @@ body {
     text-align: justify;
 }
 
-/* 旧样式保留用于兼容 */
+/* Legacy Styles Retained for Compatibility */
 .hero {
     display: none;
 }
@@ -565,7 +565,7 @@ body {
     pointer-events: none;
 }
 
-/* 滚动指示器 */
+/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -624,14 +624,14 @@ body {
     box-shadow: 0 15px 40px rgba(217, 95, 55, 0.5);
 }
 
-/* 通用容器 */
+/* Common Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* 通用section */
+/* Common Section */
 section {
     padding: 6rem 0;
 }
@@ -656,7 +656,7 @@ section {
     font-weight: 400;
 }
 
-/* 专业技能卡片 - 霓虹风格 */
+/* Professional Skills Cards - Neon Style */
 .services {
     background: var(--bg-primary);
     position: relative;
@@ -776,7 +776,7 @@ section {
     font-size: 1rem;
 }
 
-/* 技能进度条 */
+/* Skill Progress Bar */
 .skill-bar {
     margin-top: 1rem;
     background: rgba(168, 85, 247, 0.1);
@@ -793,7 +793,7 @@ section {
     box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
-/* 音乐风格标签 */
+/* Music Style Tags */
 .music-styles {
     margin-top: 4rem;
     text-align: center;
@@ -833,7 +833,7 @@ section {
     box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
 }
 
-/* 成长历程 - 现代时间线霓虹风格 */
+/* Growth Journey - Modern Timeline Neon Style */
 .journey {
     background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     position: relative;
@@ -951,8 +951,8 @@ section {
     font-size: 1rem;
 }
 
-/* 关于我 */
-/* 作品展示 - 霓虹画廊风格 */
+/* About Me */
+/* Portfolio Showcase - Neon Gallery Style */
 .showcase {
     background: var(--bg-primary);
     position: relative;
@@ -1062,7 +1062,7 @@ section {
     opacity: 1;
 }
 
-/* 视频作品 - 霓虹风格 */
+/* Video Works - Neon Style */
 .videos {
     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     position: relative;
@@ -1128,7 +1128,7 @@ section {
     background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.05));
 }
 
-/* 联系方式 - 霓虹风格 */
+/* Contact Information - Neon Style */
 .contact {
     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     text-align: center;
@@ -1231,7 +1231,7 @@ section {
     z-index: 1;
 }
 
-/* 页脚 - 霓虹风格 */
+/* Footer - Neon Style */
 .footer {
     background: var(--bg-secondary);
     text-align: center;
@@ -1250,7 +1250,7 @@ section {
     font-size: 1rem;
 }
 
-/* 灯箱 - 霓虹风格 */
+/* Lightbox - Neon Style */
 .lightbox {
     display: none;
     position: fixed;
@@ -1339,7 +1339,7 @@ section {
     box-shadow: var(--glow-neon);
 }
 
-/* 平板设备响应式 */
+/* Tablet Device Responsive */
 @media (max-width: 1024px) and (min-width: 769px) {
     .photo-grid,
     .video-grid,
@@ -1362,7 +1362,7 @@ section {
     }
 }
 
-/* 响应式设计 */
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
