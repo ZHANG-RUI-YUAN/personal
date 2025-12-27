@@ -2,6 +2,7 @@
 .vscode/
 .idea/
 .kiro/
+.claude/
 
 # System files
 .DS_Store
