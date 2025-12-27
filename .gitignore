@@ -1,6 +1,7 @@
 # IDE
 .vscode/
 .idea/
+.kiro/
 
 # System files
 .DS_Store
